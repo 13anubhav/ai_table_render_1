@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Itinerary</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Itinerary</h1>
+    <table>
+        <tr>
+            <th>Day</th>
+            <th>Time</th>
+            <th>Activity</th>
+        </tr>
+        <script>
+            const itineraryData = {
+                "itinerary": {
+                    "day1": {
+                        "09:00": "Arrival in Manali and check-in to hotel",
+                        "11:00": "Visit Hadimba Temple and explore its surroundings",
+                        "13:00": "Lunch at a nearby restaurant",
+                        "15:00": "Visit Vashisht Temple and hot springs",
+                        "17:00": "Stroll at Mall Road and do some shopping",
+                        "19:00": "Dinner at a local restaurant"
+                    },
+                    "day2": {
+                        "09:00": "Breakfast at hotel",
+                        "10:00": "Visit Solang Valley and try adventure activities such as paragliding and zorbing",
+                        "13:00": "Lunch at a local dhaba",
+                        "15:00": "Visit Manu Temple and the local market",
+                        "18:00": "Return to hotel and relax or enjoy bonfire in the evening",
+                        "20:00": "Dinner at hotel or nearby restaurant"
+                    },
+                    "day3": {
+                        "08:00": "Breakfast at hotel",
+                        "09:00": "Visit Rohtang Pass and enjoy scenic views and adventure activities (subject to weather)",
+                        "13:00": "Lunch at a local restaurant or dhaba",
+                        "15:00": "Return to Manali and visit Naggar Castle and explore its surroundings",
+                        "18:00": "Return to hotel and relax or enjoy local cuisine like siddu and kullu trout in the evening",
+                        "20:00": "Dinner at hotel or nearby restaurant"
+                    }
+                }
+            };
+
+            const table = document.querySelector('table');
+
+            for (const day in itineraryData.itinerary) {
+                const dayData = itineraryData.itinerary[day];
+                for (const time in dayData) {
+                    const activity = dayData[time];
+                    const row = document.createElement('tr');
+                    row.innerHTML = `<td>${day}</td><td>${time}</td><td>${activity}</td>`;
+                    table.appendChild(row);
+                }
+            }
+        </script>
+    </table>
+</body>
+</html>
